@@ -1,0 +1,11 @@
+Please check out the followings before you compile the programs by make:
+
+(1) Make sure you installed the CUDA toolkit and CUDA sample programs correctly.
+
+(2) Install libtiff, libpng and libjpeg/libjpeg-turbo, if you don't find them.
+
+(3) Check the compute capability of your GPU by the site: https://developer.nvidia.com/cuda-gpus, or the command "deviceQuery" distributed with the CUDA sample programs.
+
+(4) Change the macro "CUDA_INCFLAG" in the Makefile to the path for the include files of the CUDA sample program in your system, e.g., /home/username/NVIDIA_CUDA-9.2_Samples/common/inc, /usr/local/NVIDIA_CUDA-9.2_Samples/common/inc. Make sure the permission of the directory.
+
+(5) Add the compute capability of your GPU to the macro "CFLAGS" in the Makefile. For example, if the compute capability is 7.0, you have to add "-gencode arch=compute_70,code=sm_70".
