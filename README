@@ -1,4 +1,5 @@
-Please check out the followings before you compile the programs by make:
+
+A. Please check out the followings before you compile the programs by make:
 
 (1) Make sure you installed the CUDA toolkit and CUDA sample programs correctly.
 
@@ -9,3 +10,11 @@ Please check out the followings before you compile the programs by make:
 (4) Change the macro "CUDA_INCFLAG" in the Makefile to the path for the include files of the CUDA sample program in your system, e.g., /home/username/NVIDIA_CUDA-9.2_Samples/common/inc, /usr/local/NVIDIA_CUDA-9.2_Samples/common/inc. Make sure the permission of the directory.
 
 (5) Add the compute capability of your GPU to the macro "CFLAGS" in the Makefile. For example, if the compute capability is 7.0, you have to add "-gencode arch=compute_70,code=sm_70".
+
+B. You can test the command "cuda_image_filtering_global" as follows:
+
+   cuda_image_filtering_global scene2_fullHD.png gradient_filter.dat gradient
+
+The outputs, gradient_CPU.png and gradient_GPU.png, are the filtering results of the gradient filter. The Gaussian filter can be used to test as well:
+
+    cuda_image_filtering_global scene2_fullHD.png gaussian_filter_3.2.dat gaussian
